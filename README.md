@@ -82,3 +82,14 @@ Output
 ![image](https://user-images.githubusercontent.com/88712571/222904688-b0752cc8-c3d0-4f86-902c-0ce4673445be.png)
 
 ![image](https://user-images.githubusercontent.com/88712571/222904706-c48f1418-70e9-49a0-b88d-dbded87afea5.png)
+
+#### Using Routes - For Multiple Pages
+
+Delete home Tag
+![image](https://user-images.githubusercontent.com/88712571/222905537-0b3c4051-2e25-4804-a042-d84d0431ddba.png)
+
+and Specify in the Routes
+
+
+
+
