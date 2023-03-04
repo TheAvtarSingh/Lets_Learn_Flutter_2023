@@ -24,4 +24,25 @@ Output
 
 ![image](https://user-images.githubusercontent.com/88712571/222900514-a515a38f-08df-4cdc-a934-a9fed93ca76c.png)
 
+# Splitiing Files
+
+> Make Folder
+
+![image](https://user-images.githubusercontent.com/88712571/222901152-6118cdde-6174-40f9-9625-969f0f09bc9d.png)
+
+##### Add Code
+
+![image](https://user-images.githubusercontent.com/88712571/222901186-6be064ee-8be4-4b6e-bb49-533d465b0339.png)
+
+##### Import in Main.dart `import 'pages/HomePage.dart';`;
+
+![image](https://user-images.githubusercontent.com/88712571/222901217-72c4ec93-0b05-47c0-8a5d-d48c505747aa.png)
+
+##### Use Function
+
+![image](https://user-images.githubusercontent.com/88712571/222901252-30c2e887-9e1a-4bec-b562-859e22d4a52e.png)
+
+
+
+
 
