@@ -77,3 +77,8 @@ Output
 
 ![image](https://user-images.githubusercontent.com/88712571/222904135-3fd39997-a5f2-46fa-988b-020320f1d83b.png)
 
+#### If We use Both -- Brightness.dark will override it
+
+![image](https://user-images.githubusercontent.com/88712571/222904688-b0752cc8-c3d0-4f86-902c-0ce4673445be.png)
+
+![image](https://user-images.githubusercontent.com/88712571/222904706-c48f1418-70e9-49a0-b88d-dbded87afea5.png)
