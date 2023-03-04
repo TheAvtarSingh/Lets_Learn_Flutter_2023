@@ -43,6 +43,27 @@ Output
 ![image](https://user-images.githubusercontent.com/88712571/222901252-30c2e887-9e1a-4bec-b562-859e22d4a52e.png)
 
 
+#### Adding Theme
 
+```
+// Give app Dar Theme based on System Theme
+themeMode: ThemeMode.dark,
+// Setting code if application gets theme
+darkTheme: ThemeData(brightness: Brightness.dark), 
+```
 
+![image](https://user-images.githubusercontent.com/88712571/222904063-542c20c7-11c7-4b8b-a30d-f7e2fb6cd823.png)
+
+  
+#### Adding Light Theme
+```
+// Giving System Theme
+      themeMode: ThemeMode.light,
+// Specify Theme
+// primarySwatch : adjust by color
+      theme: ThemeData(primarySwatch: Colors.deepPurple),
+      
+``` 
+
+![image](https://user-images.githubusercontent.com/88712571/222904135-3fd39997-a5f2-46fa-988b-020320f1d83b.png)
 
