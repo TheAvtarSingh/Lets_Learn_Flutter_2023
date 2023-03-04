@@ -53,7 +53,19 @@ Output
       
 ```
 
+
 ![image](https://user-images.githubusercontent.com/88712571/222904475-8220870d-2980-4e7a-ac95-8444cd94ea50.png)
+
+or
+
+```
+      // themeMode: ThemeMode.dark,
+      theme: ThemeData(brightness: Brightness.dark),
+```
+
+![image](https://user-images.githubusercontent.com/88712571/222905840-7cb34c0e-ff63-481f-a467-b339c55a1d84.png)
+
+
 
 Output
 
