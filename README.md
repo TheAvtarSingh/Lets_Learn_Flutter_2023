@@ -216,3 +216,8 @@ Add Padding(for specifying size in symmetrical order) and add Column (for multip
 ```
 
 ![image](https://user-images.githubusercontent.com/88712571/222977461-22df26b1-d146-4ca5-903f-03e2897df9ed.png)
+
+Output :
+
+![image](https://user-images.githubusercontent.com/88712571/222977542-645d2bde-6347-4ae5-9d0e-4d9f66c790a8.png)
+
