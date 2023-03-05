@@ -168,3 +168,24 @@ Output :
 
 ![image](https://user-images.githubusercontent.com/88712571/222976802-fec17a13-36cf-4904-a9e6-5f66986f027c.png)
 
+### Use SpaceBox For Adding Space rather than Padding
+
+## Adding Text Fields
+```
+TextFormField(
+            decoration: InputDecoration(
+                labelText: "Username", hintText: "Enter Your Username : "),
+          ),
+          SizedBox(height: 20.0),
+          TextFormField(
+            decoration: InputDecoration(
+                labelText: "Password", hintText: "Enter Your Password : "),
+          )
+          
+```
+
+![image](https://user-images.githubusercontent.com/88712571/222977158-3a1baecc-7795-41fd-a36a-08b815e23596.png)
+
+
+![image](https://user-images.githubusercontent.com/88712571/222977127-e0367b06-6bcf-4721-8064-8ac2c3c061a0.png)
+
