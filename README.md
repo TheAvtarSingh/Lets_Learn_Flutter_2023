@@ -128,4 +128,28 @@ class LoginPage extends StatelessWidget {
 ![image](https://user-images.githubusercontent.com/88712571/222908026-fcdcf8f3-23cf-414e-bff6-a5985608ce72.png)
 
 
+## Creating a Login Page
+
+1. Add Text Image
+
+> Specify in PUBSPEC FILE
+
+![image](https://user-images.githubusercontent.com/88712571/222976549-d0cab7a9-f5a8-4fa7-b3a0-cdad42012862.png)
+
+2. Add In Folder
+
+![image](https://user-images.githubusercontent.com/88712571/222976571-b1decca5-82cb-4beb-aa64-ba759de2ccce.png)
+
+3. Use in Form
+
+```
+Image.asset(
+            "assets/images/login_image.png",
+            fit: BoxFit.cover,
+          ),
+```
+
+![image](https://user-images.githubusercontent.com/88712571/222976601-80e6fc92-4f24-42df-a63d-f6bdb69300bb.png)
+
+
 
