@@ -189,3 +189,30 @@ TextFormField(
 
 ![image](https://user-images.githubusercontent.com/88712571/222977127-e0367b06-6bcf-4721-8064-8ac2c3c061a0.png)
 
+### Specify TextField Size
+
+Add Padding(for specifying size in symmetrical order) and add Column (for multiple Children)
+
+```
+ Padding(
+            padding:
+                const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
+            child: Column(
+              children: [
+                TextFormField(
+                  decoration: InputDecoration(
+                      labelText: "Username",
+                      hintText: "Enter Your Username : "),
+                ),
+                SizedBox(height: 20.0),
+                TextFormField(
+                  decoration: InputDecoration(
+                      labelText: "Password",
+                      hintText: "Enter Your Password : "),
+                )
+              ],
+            ),
+          )
+```
+
+![image](https://user-images.githubusercontent.com/88712571/222977461-22df26b1-d146-4ca5-903f-03e2897df9ed.png)
