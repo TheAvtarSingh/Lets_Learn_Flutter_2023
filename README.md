@@ -128,9 +128,11 @@ class LoginPage extends StatelessWidget {
 ![image](https://user-images.githubusercontent.com/88712571/222908026-fcdcf8f3-23cf-414e-bff6-a5985608ce72.png)
 
 
-## Creating a Login Page
+# Creating a Login Page
 
-1. Add Text Image
+## Adding an Image
+
+1. Add Text Image use unDraw for image
 
 > Specify in PUBSPEC FILE
 
@@ -152,4 +154,17 @@ Image.asset(
 ![image](https://user-images.githubusercontent.com/88712571/222976601-80e6fc92-4f24-42df-a63d-f6bdb69300bb.png)
 
 
+Output :
+
+![image](https://user-images.githubusercontent.com/88712571/222976667-30c98633-e956-4f95-87a8-641695bbf71f.png)
+
+## Adding Google Fonts
+
+1. iMPORT dEPENEDENCY FROM PUB.DEV
+
+`flutter pub add google_fonts`
+
+2. In Main File Specify Font
+
+![image](https://user-images.githubusercontent.com/88712571/222976802-fec17a13-36cf-4904-a9e6-5f66986f027c.png)
 
