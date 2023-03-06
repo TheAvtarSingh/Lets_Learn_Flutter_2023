@@ -409,3 +409,9 @@ InkWell(
                   ),
                 )
 ```
+#### Use Ternery Operator
+
+` /* color: changeButton
+                            ? Colors.deepPurple
+                            : Colors.deepOrange ,*/
+`
