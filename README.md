@@ -415,3 +415,20 @@ InkWell(
                             ? Colors.deepPurple
                             : Colors.deepOrange ,*/
 `
+
+
+#### Added Icon
+```
+child: changeButton
+                        ? const Icon(
+                            Icons.done,
+                            color: Colors.white,
+                          )
+                        : const Text(
+                            "Login",
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+```
