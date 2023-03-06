@@ -290,3 +290,122 @@ Container(
                   ),
 ```
 
+### Adding Animation to Container
+#### MAKE Container animated and add duration
+
+```
+AnimatedContainer(
+                    duration: const Duration(seconds: 1),
+                    width: changeButton ? 50 : 150,
+                    height: 50,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        color: Colors.deepPurple,
+                        borderRadius: BorderRadius.circular(
+                          changeButton ? 50 : 8,
+                        )),
+                    child: changeButton
+                        ? const Icon(
+                            Icons.done,
+                            color: Colors.white,
+                          )
+                        : const Text(
+                            "Login",
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                  ),
+```
+
+#### Add Variable for check
+
+` bool changeButton = false;`
+
+#### Wrap under InkWell and Use onTap() and add setState() in that
+
+```
+InkWell(
+                  onTap: () async {
+                    setState(() {
+                      changeButton = true;
+                    });
+                   
+                  },
+                  child: AnimatedContainer(
+                    duration: const Duration(seconds: 1),
+                    width: changeButton ? 50 : 150,
+                    height: 50,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        color: Colors.deepPurple,
+                        borderRadius: BorderRadius.circular(
+                          changeButton ? 50 : 8,
+                        )),
+                    child: changeButton
+                        ? const Icon(
+                            Icons.done,
+                            color: Colors.white,
+                          )
+                        : const Text(
+                            "Login",
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                  ),
+                )
+```
+
+#### as animation will be of one second so after 1 second we have to change screen
+
+#### Add Navigator
+
+```
+onTap: () async {
+                    setState(() {
+                      changeButton = true;
+                    });
+                    await Future.delayed(Duration(seconds: 1));
+                    Navigator.pushNamed(context, MyRoute.homeRoute);
+                  }
+```
+
+##### Final Button
+
+```
+InkWell(
+                  onTap: () async {
+                    setState(() {
+                      changeButton = true;
+                    });
+                    await Future.delayed(Duration(seconds: 1));
+                    Navigator.pushNamed(context, MyRoute.homeRoute);
+                  },
+                  child: AnimatedContainer(
+                    duration: const Duration(seconds: 1),
+                    width: changeButton ? 50 : 150,
+                    height: 50,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        color: Colors.deepPurple,
+                        borderRadius: BorderRadius.circular(
+                          changeButton ? 50 : 8,
+                        )),
+                    child: changeButton
+                        ? const Icon(
+                            Icons.done,
+                            color: Colors.white,
+                          )
+                        : const Text(
+                            "Login",
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                  ),
+                )
+```
