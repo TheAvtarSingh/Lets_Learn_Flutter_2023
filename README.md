@@ -246,3 +246,19 @@ Final Output
 ![image](https://user-images.githubusercontent.com/88712571/223035906-d0521c50-96c2-47a9-8731-e887ab9190f8.png)
 
 
+### Making String Interpolation with 'Welcome Text' : 
+
+1. Change Class From Stateless to stateful widget
+
+![image](https://user-images.githubusercontent.com/88712571/223037119-32fad89f-ce52-4412-9601-d3cc4d77f7bd.png)
+
+
+2. Create Empty Variable
+
+`var name = "";`
+
+3. Make Onchange Method and use setState() method to rendert again and again
+
+![image](https://user-images.githubusercontent.com/88712571/223037416-e6e8915a-1412-4789-8917-a53d061d58d6.png)
+
+
