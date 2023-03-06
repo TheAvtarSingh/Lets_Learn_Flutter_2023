@@ -229,3 +229,20 @@ Final Output
 
 ![image](https://user-images.githubusercontent.com/88712571/222977674-6eb741bc-821b-473f-910b-13fe7ca4fcda.png)
 
+
+#### For easy routing make a class and define instance variable and use them (make them static so we not neet to instantiate again and again)
+
+![image](https://user-images.githubusercontent.com/88712571/223036173-bc25ddb4-b389-45cb-bbc3-039c54e77cf9.png)
+
+
+![image](https://user-images.githubusercontent.com/88712571/223036138-fd85378a-823f-44f8-9936-fffe3df31ec2.png)
+
+
+![image](https://user-images.githubusercontent.com/88712571/223036253-8e26e39b-264e-45c3-94a7-7b729e752a77.png)
+
+
+### Changing Size and Adding Naviation to Button
+
+![image](https://user-images.githubusercontent.com/88712571/223035906-d0521c50-96c2-47a9-8731-e887ab9190f8.png)
+
+
