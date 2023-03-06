@@ -262,3 +262,31 @@ Final Output
 ![image](https://user-images.githubusercontent.com/88712571/223037416-e6e8915a-1412-4789-8917-a53d061d58d6.png)
 
 
+### Making Button Using Container for Adding Animation
+
+```
+Container(
+                  
+                    width: 150,
+                    height: 50,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        color: Colors.deepPurple,
+                        borderRadius: BorderRadius.circular(
+                         8,
+                        )),
+                    child: changeButton
+                        ? const Icon(
+                            Icons.done,
+                            color: Colors.white,
+                          )
+                        : const Text(
+                            "Login",
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                  ),
+```
+
