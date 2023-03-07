@@ -449,3 +449,31 @@ Output :
 
 ![image](https://user-images.githubusercontent.com/88712571/223045870-3b78eb26-8dfb-4fd9-a7a0-455174b7dbd2.png)
 
+## Make Form Key (_ --> For Private )
+
+` final _formKey = GlobalKey<FormState>(); `
+
+## use under Form
+
+`    key: _formKey,`
+
+## Move Core in Method
+
+![image](https://user-images.githubusercontent.com/88712571/223407541-2468fcec-04bc-4c88-9790-04374046344f.png)
+
+## Call Function
+
+![image](https://user-images.githubusercontent.com/88712571/223407686-a3b31ae8-e38a-4b2b-89b5-a2f19bdc3df9.png)
+
+## Add Validator Under Text Field
+
+![image](https://user-images.githubusercontent.com/88712571/223408964-eb410151-d024-4c49-9da8-9b62d62c75c8.png)
+
+## Wrap with Method
+
+![image](https://user-images.githubusercontent.com/88712571/223411138-11c21923-81cf-4335-9a89-d8a1b0ccaff3.png)
+
+## Done
+
+![image](https://user-images.githubusercontent.com/88712571/223411230-ab3b7067-4f0f-4ad4-afda-1129f2a93deb.png)
+
