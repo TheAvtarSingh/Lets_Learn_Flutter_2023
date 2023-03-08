@@ -489,3 +489,32 @@ Make A Stateless Widget
 Import in Scaffold
 
 ![image](https://user-images.githubusercontent.com/88712571/223701119-f4d98c58-8b0d-4d71-ac1a-4c5a66b385bb.png)
+
+## Adding Image From Network
+
+```
+  final _imageUrl =
+      "https://st3.depositphotos.com/1037987/15097/i/600/depositphotos_150975580-stock-photo-portrait-of-businesswoman-in-office.jpg";
+```
+
+## Using Image
+
+`currentAccountPicture: Image.network(_imageUrl),`
+
+## Output 
+
+![image](https://user-images.githubusercontent.com/88712571/223703026-9a07cffe-7368-4672-9717-08aaf05713ac.png)
+
+## Circiling Imaage
+
+use 
+
+```
+ currentAccountPicture: CircleAvatar(
+                backgroundImage: NetworkImage(_imageUrl),
+              ),
+```
+
+Output :
+
+![image](https://user-images.githubusercontent.com/88712571/223703428-d32396bf-246c-4f4b-b491-6af943348928.png)
