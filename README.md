@@ -518,3 +518,9 @@ use
 Output :
 
 ![image](https://user-images.githubusercontent.com/88712571/223703428-d32396bf-246c-4f4b-b491-6af943348928.png)
+
+## Adding Color to Whole Drawer
+
+Wrap ListView with container and set color to deepPurple
+
+![image](https://user-images.githubusercontent.com/88712571/223704240-26cc7676-4179-4319-9dfa-1efed8b791f6.png)
