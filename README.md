@@ -660,3 +660,16 @@ in HomePage body make
 
 ![image](https://user-images.githubusercontent.com/88712571/223807254-39f3411c-5311-4da0-bfb3-5c6e42e7d295.png)
 
+## Lets Generate DummyList
+
+`  final dummyList = List.generate(50, (index) => CatelogModel.Items[0]); `
+
+## Return
+
+![image](https://user-images.githubusercontent.com/88712571/223809346-fea0c716-c041-40fe-84b4-93500ce9aada.png)
+
+
+Output :
+
+![image](https://user-images.githubusercontent.com/88712571/223810269-3d0b912e-84f7-4b27-ab67-2a2d12cb0db0.png)
+
