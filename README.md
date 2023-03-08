@@ -524,3 +524,23 @@ Output :
 Wrap ListView with container and set color to deepPurple
 
 ![image](https://user-images.githubusercontent.com/88712571/223704240-26cc7676-4179-4319-9dfa-1efed8b791f6.png)
+
+## Adding ListTiles
+
+```
+ListTile(
+              leading: Icon(
+                CupertinoIcons.profile_circled,
+                color: Colors.white,
+              ),
+              title: Text(
+                "Profile",
+                textScaleFactor: 1.2,
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+```
+
+Output 
+
+![image](https://user-images.githubusercontent.com/88712571/223705994-166b47ff-d005-42c0-ae90-2aa4c5ede895.png)
