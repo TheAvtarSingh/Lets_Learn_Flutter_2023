@@ -544,3 +544,12 @@ ListTile(
 Output 
 
 ![image](https://user-images.githubusercontent.com/88712571/223705994-166b47ff-d005-42c0-ae90-2aa4c5ede895.png)
+
+# Changing HomePage Theme
+
+![image](https://user-images.githubusercontent.com/88712571/223756363-e7e5503c-3372-4c5d-83f3-11aeb7422ec8.png)
+
+Output :
+
+![image](https://user-images.githubusercontent.com/88712571/223756482-5e9cba9b-baa0-4803-be07-9874e35cd53b.png)
+
