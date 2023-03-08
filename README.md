@@ -477,3 +477,15 @@ Output :
 
 ![image](https://user-images.githubusercontent.com/88712571/223411230-ab3b7067-4f0f-4ad4-afda-1129f2a93deb.png)
 
+
+# Improving HomePage
+
+## Make Drawer
+
+Make A Stateless Widget
+
+![image](https://user-images.githubusercontent.com/88712571/223701047-311bd508-6ae4-4a56-a799-c571531d2515.png)
+
+Import in Scaffold
+
+![image](https://user-images.githubusercontent.com/88712571/223701119-f4d98c58-8b0d-4d71-ac1a-4c5a66b385bb.png)
