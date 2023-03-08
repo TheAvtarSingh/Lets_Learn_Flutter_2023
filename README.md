@@ -553,3 +553,33 @@ Output :
 
 ![image](https://user-images.githubusercontent.com/88712571/223756482-5e9cba9b-baa0-4803-be07-9874e35cd53b.png)
 
+# Seperating Theme
+
+![image](https://user-images.githubusercontent.com/88712571/223779270-4bd3a6b7-c7e7-4cb5-ad0e-67d075240256.png)
+
+```
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class MyTheme {
+  static ThemeData lightTheme(BuildContext context) => ThemeData(
+        primarySwatch: Colors.deepPurple,
+        fontFamily: GoogleFonts.lato().fontFamily,
+        appBarTheme: AppBarTheme(
+            color: Colors.white,
+            elevation: 0.0,
+            iconTheme: IconThemeData(color: Colors.black),
+            titleTextStyle: Theme.of(context).textTheme.titleLarge),
+      );
+
+  static ThemeData DarkTheme(BuildContext context) =>
+      ThemeData(brightness: Brightness.dark);
+}
+```
+## Import Theme
+
+![image](https://user-images.githubusercontent.com/88712571/223779469-93419169-fd73-491d-a312-90bcc0284938.png)
+
+## Ouput 
+Same as Above
+
