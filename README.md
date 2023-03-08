@@ -588,6 +588,19 @@ Same as Above
 ![image](https://user-images.githubusercontent.com/88712571/223790506-c38a856f-177f-4542-98d6-011eaab9a3c1.png)
 
 ```
+class CatelogModel {
+  static final Items = [
+    Item(
+        id: "1",
+        name: "iPhone 12 Pro",
+        desc: "Apple iPhone 12th generation",
+        price: 999,
+        color: "#33505a",
+        image:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRISJ6msIu4AU9_M9ZnJVQVFmfuhfyJjEtbUm3ZK11_8IV9TV25-1uM5wHjiFNwKy99w0mR5Hk&usqp=CAc")
+  ];
+}
+
 class Item {
   final String id;
   final String name;
@@ -606,15 +619,44 @@ class Item {
       required this.image});
 }
 
-final products = [
-  Item(
-      id: "1",
-      name: "iPhone 12 Pro",
-      desc: "Apple iPhone 12th generation",
-      price: 999,
-      color: "#33505a",
-      image:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRISJ6msIu4AU9_M9ZnJVQVFmfuhfyJjEtbUm3ZK11_8IV9TV25-1uM5wHjiFNwKy99w0mR5Hk&usqp=CAc")
-];
 
 ```
+
+## make item_widget class
+
+![image](https://user-images.githubusercontent.com/88712571/223807457-541c58b6-f2e6-489a-a6e0-99d864ebfac5.png)
+
+```
+import 'package:catelog_application/models/catelog.dart';
+import 'package:flutter/material.dart';
+
+class ItemWidget extends StatelessWidget {
+  final Item item;
+  const ItemWidget({super.key, required this.item}) : assert(item != null);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      // elevation: 0.5,
+      child: ListTile(
+        leading: Image.network(item.image),
+        title: Text(item.name),
+        subtitle: Text(item.desc),
+        trailing: Text(
+          "\$ ${item.price}",
+          textScaleFactor: 1.5,
+          style: TextStyle(
+            color: Colors.deepPurple,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+in HomePage body make 
+
+![image](https://user-images.githubusercontent.com/88712571/223807254-39f3411c-5311-4da0-bfb3-5c6e42e7d295.png)
+
