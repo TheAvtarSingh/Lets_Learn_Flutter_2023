@@ -764,4 +764,19 @@ Output :
 
 ![image](https://user-images.githubusercontent.com/88712571/224082975-364b5f73-a084-4feb-a300-4c25b45e0c23.png)
 
+## As the Method is Returning String we have to decode it using decoder
+
+import 
+`import 'dart:convert';`
+
+use
+
+```
+var decodedData = jsonDecode(catelogJson); //String to map
+    print(decodedData);
+        var productData = decodedData["products"];
+    print(productData);
+```
+
+![image](https://user-images.githubusercontent.com/88712571/224084127-d078fea4-6265-43b4-85e6-2c8c0c2d11a3.png)
 
