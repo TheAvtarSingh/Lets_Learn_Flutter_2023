@@ -780,3 +780,28 @@ var decodedData = jsonDecode(catelogJson); //String to map
 
 ![image](https://user-images.githubusercontent.com/88712571/224084127-d078fea4-6265-43b4-85e6-2c8c0c2d11a3.png)
 
+## Json Mapping
+
+![image](https://user-images.githubusercontent.com/88712571/224087819-e3b06d05-19fb-4361-acfc-7576725c7dde.png)
+
+## Change to List
+![image](https://user-images.githubusercontent.com/88712571/224089386-c9eda943-3f51-4b1e-953a-afd467512359.png)
+
+## Map
+
+![image](https://user-images.githubusercontent.com/88712571/224089272-7f96e3c4-6e9f-421f-8483-b757de27c6b2.png)
+
+## Replace
+
+![image](https://user-images.githubusercontent.com/88712571/224089620-0546bde5-b3e4-4ac9-a570-f943d13b30e2.png)
+
+## Call SetState()
+
+![image](https://user-images.githubusercontent.com/88712571/224089953-16e1561e-74db-4bc3-b620-c56d1a4d96b3.png)
+
+## Done
+
+## Improving Code
+
+![image](https://user-images.githubusercontent.com/88712571/224097582-4f9ffd69-40c6-4146-b8b1-a01138263dcf.png)
+
