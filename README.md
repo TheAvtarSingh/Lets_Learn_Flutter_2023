@@ -812,3 +812,63 @@ var decodedData = jsonDecode(catelogJson); //String to map
 ## Output :
  
  ![image](https://user-images.githubusercontent.com/88712571/224119481-821bf0d2-d645-4115-8fdd-001acaf41431.png)
+
+
+# Added Final Styles
+
+```
+body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: (CatelogModel.Items != null && CatelogModel.Items.isNotEmpty)
+            ? /* ListView.builder(
+                itemCount: CatelogModel.Items.length,
+                itemBuilder: (context, index) {
+                  return ItemWidget(
+                    item: CatelogModel.Items[index],
+                  );
+                }) */
+            GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 12,
+                    crossAxisSpacing: 12),
+                itemBuilder: (context, index) {
+                  final item = CatelogModel.Items[index];
+                  return Card(
+                    clipBehavior: Clip.antiAlias,
+                    shape: RoundedRectangleBorder(
+                        /* side:
+                            BorderSide(color: Color.fromARGB(255, 83, 83, 85)), */
+                        borderRadius: BorderRadius.circular(10)),
+                    child: GridTile(
+                      child: Image.network(item.image),
+                      header: Container(
+                          child: Text(
+                            item.name,
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          padding: EdgeInsets.all(12),
+                          decoration: BoxDecoration(color: Colors.deepPurple)),
+                      footer: Container(
+                          child: Text(
+                            item.price.toString(),
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          padding: EdgeInsets.all(12),
+                          decoration: BoxDecoration(color: Colors.green[600])),
+                    ),
+                  );
+                },
+                itemCount: CatelogModel.Items.length,
+              )
+            : Center(
+                child: CircularProgressIndicator(),
+              ),
+      ),
+```
+
+# Output : 
+![image](https://user-images.githubusercontent.com/88712571/224129042-5d968be9-b335-4729-8022-f744dc8be700.png)
+
+# Now We will Use `Velocity-x`  for rest
+
