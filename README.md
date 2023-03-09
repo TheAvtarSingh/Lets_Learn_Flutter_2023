@@ -750,6 +750,18 @@ Output :
 
 ## In homepage Make it Stateful widget by clicking on Bulb Button
 
-## Then Import a initState method from overridin file -- to get data before initilization
+
+## Then Import a initState method from overridin file inside _HomePage class (Private) -- to get data before initilization 
+
+![image](https://user-images.githubusercontent.com/88712571/224082597-7189e3d5-491a-418b-a960-28a8e9653ded.png)
+
 
 ## Make LoadFolder method in it and them call it outside
+
+![image](https://user-images.githubusercontent.com/88712571/224082804-20629546-3209-420a-8c32-bed6e1fff8ba.png)
+
+## You can verify the data by printing it
+
+![image](https://user-images.githubusercontent.com/88712571/224082975-364b5f73-a084-4feb-a300-4c25b45e0c23.png)
+
+
