@@ -1177,6 +1177,7 @@ class CatelogImage extends StatelessWidget {
 
 ![image](https://user-images.githubusercontent.com/88712571/224370284-80de3269-b394-4484-b07b-5c345d902111.png)
 
+## Seperating Files
 
+![image](https://user-images.githubusercontent.com/88712571/224372644-2130c176-c051-4051-9393-d3b691bb3a25.png)
 
-## Final Output
