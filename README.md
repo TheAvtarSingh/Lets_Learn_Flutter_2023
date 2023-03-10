@@ -873,6 +873,181 @@ body: Padding(
 # Now We will Use `Velocity-x`  for rest
 
 ## Delete and all Velocity Code
+```
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: MyTheme.creamColor,
+      // To Start from Area
+      body: SafeArea(
+          child: Container(
+              // Adding Padding
+              padding: Vx.m32,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  MyHeader(),
+                  if (CatelogModel.Items != null &&
+                      CatelogModel.Items.isNotEmpty)
+                    CatelogList().expand()
+                  else
+                    Center(child: CircularProgressIndicator())
+                ],
+              ))),
+    );
+   
+ ```
+ 
+ ## Sperating Header Element
+ ```
+ class MyHeader extends StatelessWidget {
+  const MyHeader({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      // To Start from Left
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        "ProDiscounts.github.io"
+            // Text Type
+            .text
+            // exxtra Large
+            .xl4
+            // Bold
+            .bold
+            // Color
+            .color(MyTheme.darkBluishColor)
+            // to make it a widget
+            .make(),
+        "Trending Products".text.xl2.make()
+      ],
+    );
+  }
+}
+ ```
+ ## For getting Catelog List
+
+```
+class CatelogList extends StatelessWidget {
+  const CatelogList({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+        shrinkWrap: true,
+        itemCount: CatelogModel.Items.length,
+        itemBuilder: (context, index) {
+          final catelog = CatelogModel.Items[index];
+          return CatelogItem(
+            catelog: catelog,
+          );
+        });
+  }
+}
+
+class CatelogItem extends StatelessWidget {
+  final Item catelog;
+  const CatelogItem({super.key, required this.catelog})
+      : assert(catelog != null);
+  @override
+  Widget build(BuildContext context) {
+    return VxBox(
+      child: Row(
+        children: [
+          CatelogImage(image: catelog.image),
+          Expanded(
+              child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              catelog.name.text.lg.color(MyTheme.darkBluishColor).bold.make(),
+              catelog.desc.text.sm
+                  .textStyle(context.captionStyle)
+                  .color(MyTheme.darkBluishColor)
+                  .bold
+                  .make(),
+              10.heightBox,
+              ButtonBar(
+                alignment: MainAxisAlignment.spaceBetween,
+                buttonPadding: Vx.mH8,
+                children: [
+                  "\$${catelog.price}".text.bold.xl.make(),
+                  ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all(
+                              MyTheme.darkBluishColor),
+                          shape: MaterialStatePropertyAll(StadiumBorder())),
+                      onPressed: () {},
+                      child: "Buy".text.bold.make())
+                ],
+              ).pOnly(right: 12)
+            ],
+          ))
+        ],
+      ),
+    ).white.roundedLg.square(150).make().py16();
+  }
+}
+
+```
+
+## For Adding Image
+
+```
+class CatelogImage extends StatelessWidget {
+  final String image;
+  const CatelogImage({super.key, required this.image}) : assert(image != null);
+  @override
+  Widget build(BuildContext context) {
+    return Image.network(
+      image,
+    ).box.p16.rounded.color(MyTheme.creamColor).make().p16();
+  }
+}
+```
+
+### Complete Class
+
+```
+import 'package:catelog_application/widgets/Themes.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'dart:convert';
+import '../models/catelog.dart';
+import '../widgets/Drawer.dart';
+import '../widgets/item_widget.dart';
+import 'package:velocity_x/velocity_x.dart';
+
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final days = 30;
+
+  final name = "Avtar";
+
+  @override
+  void initState() {
+    super.initState();
+    loadData();
+  }
+
+  loadData() async {
+    await Future.delayed(Duration(seconds: 2));
+    final catelogJson =
+        await rootBundle.loadString("assets/files/catalog.json");
+    final decodedData = jsonDecode(catelogJson); //String to map
+    var productData = decodedData["products"];
+    CatelogModel.Items =
+        List.from(productData).map<Item>((item) => Item.fromMap(item)).toList();
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -895,5 +1070,113 @@ body: Padding(
                 ],
               ))),
     );
-    
- ## For getting Catelog List
+  }
+}
+
+class MyHeader extends StatelessWidget {
+  const MyHeader({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      // To Start from Left
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        "ProDiscounts.github.io"
+            // Text Type
+            .text
+            // exxtra Large
+            .xl4
+            // Bold
+            .bold
+            // Color
+            .color(MyTheme.darkBluishColor)
+            // to make it a widget
+            .make(),
+        "Trending Products".text.xl2.make()
+      ],
+    );
+  }
+}
+
+class CatelogList extends StatelessWidget {
+  const CatelogList({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+        shrinkWrap: true,
+        itemCount: CatelogModel.Items.length,
+        itemBuilder: (context, index) {
+          final catelog = CatelogModel.Items[index];
+          return CatelogItem(
+            catelog: catelog,
+          );
+        });
+  }
+}
+
+class CatelogItem extends StatelessWidget {
+  final Item catelog;
+  const CatelogItem({super.key, required this.catelog})
+      : assert(catelog != null);
+  @override
+  Widget build(BuildContext context) {
+    return VxBox(
+      child: Row(
+        children: [
+          CatelogImage(image: catelog.image),
+          Expanded(
+              child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              catelog.name.text.lg.color(MyTheme.darkBluishColor).bold.make(),
+              catelog.desc.text.sm
+                  .textStyle(context.captionStyle)
+                  .color(MyTheme.darkBluishColor)
+                  .bold
+                  .make(),
+              10.heightBox,
+              ButtonBar(
+                alignment: MainAxisAlignment.spaceBetween,
+                buttonPadding: Vx.mH8,
+                children: [
+                  "\$${catelog.price}".text.bold.xl.make(),
+                  ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all(
+                              MyTheme.darkBluishColor),
+                          shape: MaterialStatePropertyAll(StadiumBorder())),
+                      onPressed: () {},
+                      child: "Buy".text.bold.make())
+                ],
+              ).pOnly(right: 12)
+            ],
+          ))
+        ],
+      ),
+    ).white.roundedLg.square(150).make().py16();
+  }
+}
+
+class CatelogImage extends StatelessWidget {
+  final String image;
+  const CatelogImage({super.key, required this.image}) : assert(image != null);
+  @override
+  Widget build(BuildContext context) {
+    return Image.network(
+      image,
+    ).box.p16.rounded.color(MyTheme.creamColor).make().p16();
+  }
+}
+
+```
+
+## Ouput :
+
+![image](https://user-images.githubusercontent.com/88712571/224370284-80de3269-b394-4484-b07b-5c345d902111.png)
+
+
+
+## Final Output
