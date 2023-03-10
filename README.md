@@ -872,3 +872,28 @@ body: Padding(
 
 # Now We will Use `Velocity-x`  for rest
 
+## Delete and all Velocity Code
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: MyTheme.creamColor,
+      // To Start from Area
+      body: SafeArea(
+          child: Container(
+              // Adding Padding
+              padding: Vx.m32,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  MyHeader(),
+                  if (CatelogModel.Items != null &&
+                      CatelogModel.Items.isNotEmpty)
+                    CatelogList().expand()
+                  else
+                    Center(child: CircularProgressIndicator())
+                ],
+              ))),
+    );
+    
+ ## For getting Catelog List
