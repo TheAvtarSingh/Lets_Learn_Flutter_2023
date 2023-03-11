@@ -1292,3 +1292,264 @@ class _CartList extends StatelessWidget {
 ### Output 
 
 ![image](https://user-images.githubusercontent.com/88712571/224471464-605d4000-bdef-4190-b65a-e1c3625f7a1b.png)
+
+
+## Craeting a Mapping Model For Cart
+
+![image](https://user-images.githubusercontent.com/88712571/224471536-e0e033f6-1d3c-4b6f-8684-a28df4ca5215.png)
+
+## Mapping
+
+```
+import 'package:catelog_application/cors/store.dart';
+import 'package:catelog_application/models/catelog.dart';
+import 'package:velocity_x/velocity_x.dart';
+
+class CartModel {
+
+
+  late CatelogModel _catelog;
+
+  // catelog Field
+
+// COLLECTION OF IDS - FOR EACT ITEM
+  final List<int> _itemIds = [];
+
+  // get Catelog
+  CatelogModel get catelog => _catelog;
+
+  // set
+
+  set catelog(CatelogModel newCatelog) {
+    assert(newCatelog != null);
+    _catelog = newCatelog;
+  }
+
+  // Get Items
+  List<Item> get items => _itemIds.map((id) => _catelog.getById(id)).toList();
+
+  // get total price
+  num get totalPrice =>
+      items.fold(0, (total, current) => total + current.price);
+
+  // Add Item
+
+  void add(Item item) {
+    _itemIds.add(item.id);
+  }
+
+  // remove
+  void remove(Item item) {
+    _itemIds.remove(item.id);
+  }
+}
+
+// Add Item
+class AddMutation extends VxMutation<MyStore> {
+  final Item item;
+
+  AddMutation(this.item);
+  @override
+  perform() {
+    store?.cart._itemIds.add(item.id);
+  }
+}
+
+// Remove Item
+class RemoveMutation extends VxMutation<MyStore> {
+  final Item item;
+
+  RemoveMutation(this.item);
+  @override
+  perform() {
+    store?.cart._itemIds.remove(item.id);
+  }
+}
+```
+## Seperating Widget
+
+![image](https://user-images.githubusercontent.com/88712571/224471630-8024f89d-0f2c-42cb-bf95-a3e2ed34058f.png)
+
+## Add Seperate Logic
+
+```
+import 'package:catelog_application/cors/store.dart';
+import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
+
+import '../../models/cart.dart';
+import '../../models/catelog.dart';
+import '../Themes.dart';
+
+class AddToCart extends StatelessWidget {
+  final Item catelog;
+  AddToCart({super.key, required this.catelog});
+
+  // final _cart = CartModel();
+
+  @override
+  Widget build(BuildContext context) {
+    // VxState.listen(context, to: []);
+    VxState.watch(context, on: [AddMutation, RemoveMutation]);
+
+    final CartModel _cart = (VxState.store as MyStore).cart;
+    bool isInCart = _cart.items.contains(catelog) ?? false;
+    return ElevatedButton(
+        style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(MyTheme.darkBluishColor),
+            shape: MaterialStatePropertyAll(StadiumBorder())),
+        onPressed: () {
+          if (!isInCart) {
+            AddMutation(catelog);
+            // setState(() {});
+          }
+        },
+        child: isInCart ? Icon(Icons.done) : "Add to Card".text.bold.make());
+  }
+}
+```
+## CatelogHeader
+
+```
+import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
+
+class MyHeader extends StatelessWidget {
+  const MyHeader({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      // To Start from Left
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        "ProDiscounts.github.io"
+            // Text Type
+            .text
+            // exxtra Large
+            .xl4
+            // Bold
+            .bold
+            // Color
+            .color(context.theme.hintColor)
+            // to make it a widget
+            .make()
+            .p0(),
+        "Trending Products".text.xl2.color(context.theme.errorColor).make(),
+      ],
+    );
+  }
+}
+```
+
+## CatelogImage
+
+```
+import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
+
+import '../Themes.dart';
+
+class CatelogImage extends StatelessWidget {
+  final String image;
+  const CatelogImage({super.key, required this.image}) : assert(image != null);
+  @override
+  Widget build(BuildContext context) {
+    return Image.network(
+      image,
+    ).box.p16.rounded.color(MyTheme.creamColor).make().p16();
+  }
+}
+
+```
+
+## CatelogImage
+
+```
+import 'package:catelog_application/models/cart.dart';
+import 'package:catelog_application/pages/Home_Details_Page.dart';
+import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
+
+import '../../models/catelog.dart';
+import '../Themes.dart';
+import 'add_to_cart.dart';
+import 'catelog_image.dart';
+
+class CatelogList extends StatelessWidget {
+  const CatelogList({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+        shrinkWrap: true,
+        itemCount: CatelogModel.Items.length,
+        itemBuilder: (context, index) {
+          final catelog = CatelogModel.Items[index];
+          return InkWell(
+            onTap: () => {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HomeDetailsPage(catelog: catelog),
+                ),
+              ),
+            },
+            child: CatelogItem(
+              catelog: catelog,
+            ),
+          );
+        });
+  }
+}
+
+class CatelogItem extends StatelessWidget {
+  final Item catelog;
+  const CatelogItem({super.key, required this.catelog})
+      : assert(catelog != null);
+  @override
+  Widget build(BuildContext context) {
+    return VxBox(
+      child: Row(
+        children: [
+          Hero(
+              tag: Key(catelog.id.toString()),
+              child: CatelogImage(image: catelog.image)),
+          Expanded(
+              child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              catelog.name.text.lg.color(MyTheme.darkCreamColor).bold.make(),
+              catelog.desc.text.sm
+                  .textStyle(context.captionStyle)
+                  .color(MyTheme.darkCreamColor)
+                  .bold
+                  .make(),
+              10.heightBox,
+              ButtonBar(
+                alignment: MainAxisAlignment.spaceBetween,
+                buttonPadding: Vx.mH8,
+                children: [
+                  "\$${catelog.price}".text.bold.xl.make(),
+                  AddToCart(
+                    catelog: catelog,
+                  )
+                ],
+              ).pOnly(right: 12)
+            ],
+          ))
+        ],
+      ),
+    ).white.roundedLg.square(150).make().py16();
+  }
+}
+
+```
+
+![image](https://user-images.githubusercontent.com/88712571/224471749-fd454629-63f9-4aa3-9717-fb7b4ed551cf.png)
+
+![image](https://user-images.githubusercontent.com/88712571/224471755-f948b9bb-6da5-4b71-ad1e-56d184e9be73.png)
+
+
+
