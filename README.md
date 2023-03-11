@@ -1600,3 +1600,26 @@ class MyTheme {
 ## Try Changing from Main from Theme.system to light or dark
 
 
+# Getting Data from Http/Network
+
+## Add Package `http from pub`
+
+## import Package
+
+`import 'package:http/http.dart' as http;`
+
+## Add Url
+![image](https://user-images.githubusercontent.com/88712571/224472270-bbb5b701-1224-4651-9a80-3e2ca8d072f1.png)
+
+## Update
+
+![image](https://user-images.githubusercontent.com/88712571/224472318-c23d95c8-416d-4ce9-9f37-eeb1033a1c7c.png)
+
+and
+
+![image](https://user-images.githubusercontent.com/88712571/224472397-3ac56596-a2f6-4b59-934b-2e7d02ad67b4.png)
+
+# Done
+![image](https://user-images.githubusercontent.com/88712571/224472417-7ec41dff-03ad-4fce-a84c-106d165c804b.png)
+
+
